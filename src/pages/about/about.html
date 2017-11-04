@@ -1,0 +1,31 @@
+<ion-header>
+  
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
+      <ion-title>About this CV creator</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-card color="primary">
+          
+            <ion-card-header>
+              Make your own pocket CV in just a few minutes
+            </ion-card-header>
+          
+            <ion-card-content>
+                <img src="images/CV2.jpg"/>
+              <p>Click button below and fill all the fields. If you already have one, you can see and modify it from Targeted CV page.</p>
+            </ion-card-content>
+            
+          
+          </ion-card>
+          <button ion-button color="secondary" full (click)="goCreate()">Create CV!</button>
+  
+  </ion-content>

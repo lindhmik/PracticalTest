@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+  <ion-buttons >
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  <ion-title >
+    CV Maker
+  </ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+    <h3> Some of my working projects:</h3>
+    <ion-row>
+        <ion-col col-9>
+          <ion-item>
+            <ion-textarea type="text" [(ngModel)]="newProject" placeholder="Working project "></ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="addProject()">Add Project</button>
+        </ion-col>
+      </ion-row>
+      <ion-list>
+          <ion-item-sliding *ngFor="let project of ProjectRows | async">
+            <ion-item color="darkb" >
+              {{ project.$value }}
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="danger" icon-only (click)="removeProject(project.$key)"><ion-icon name="trash"></ion-icon></button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+        <button ion-button color="secondary" type="submit" (click)="goActivity()" >Hobbies and other activities >></button> 
+     
+     
+</ion-content>
+
+

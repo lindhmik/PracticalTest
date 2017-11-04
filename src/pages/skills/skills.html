@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Skills</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <h3> I am familiar with:</h3>
+    <ion-row>
+        <ion-col col-9>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="newSkill" placeholder="New Skill"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="addSkill()">Add new Skill!</button>
+        </ion-col>
+      </ion-row>
+      
+      <ion-list>
+          <ion-item-sliding *ngFor="let skill of SkillRows | async">
+            <ion-item color="darkb" >
+              {{ skill.$value }}
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="danger" icon-only (click)="removeSkill(skill.$key)"><ion-icon name="trash"></ion-icon></button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+        <button ion-button color="secondary" type="submit" (click)="goEducation()" >Education info >></button>
+</ion-content>

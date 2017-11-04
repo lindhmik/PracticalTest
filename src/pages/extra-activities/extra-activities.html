@@ -1,0 +1,34 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>My hobbies and other intrests</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content padding>
+        <h3> Thinks i like to do:</h3>
+        <ion-row>
+            <ion-col col-9>
+              <ion-item>
+                <ion-input type="text" [(ngModel)]="newActivity" placeholder="New Skill"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <button ion-button (click)="addActivity()">Add new Skill!</button>
+            </ion-col>
+          </ion-row>
+          
+          <ion-list>
+              <ion-item-sliding *ngFor="let activity of ActivityRows | async">
+                <ion-item color="darkb" >
+                  {{ activity.$value }}
+                </ion-item>
+                <ion-item-options side="right">
+                  <button ion-button color="danger" icon-only (click)="removeActivity(activity.$key)"><ion-icon name="trash"></ion-icon></button>
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-list>
+            <button ion-button color="secondary" type="submit" (click)="goCv()" >I'am done!</button>
+    </ion-content>
+    

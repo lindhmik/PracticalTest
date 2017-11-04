@@ -1,14 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Welcome to myCVApp
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+
+    <ion-card color="primary" block>
+      
+
+        <ion-card-content>
+          <ion-card-title>
+            Curriculum vitae
+          </ion-card-title>
+            
+            <p>Easy way to manage your CV.</p>
+            <img src="images/CV1.jpg"/>
+            
+            
+        </ion-card-content>
+        </ion-card>
+
+        <button ion-button full color="secondary" (click)="gotoLogin()">Login</button>
+        <button ion-button full color="primary" (click)="gotoRegister()">Register</button>
+      </ion-content>

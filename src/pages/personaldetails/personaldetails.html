@@ -1,0 +1,71 @@
+<ion-header>
+    
+      <ion-navbar>
+          <ion-buttons start>
+              <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            </ion-buttons>
+        <ion-title>Personal details:</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+
+
+<ion-content padding>
+
+    <h3>Fill your information form:</h3>
+     
+  <form (ngSubmit)= "createPerson(fullName, age, city, languages, email, presText)">
+        
+      <ion-item>
+        <ion-label floating>First and last name</ion-label>
+        <ion-input type="text" [(ngModel)]="fullName" name="name"></ion-input>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label floating>Age</ion-label>
+        <ion-input type="text" [(ngModel)]="age" name="age"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" [(ngModel)]="city" name="city"></ion-input>
+        </ion-item>
+          
+      <ion-item>
+        <ion-label floating>Languages</ion-label>
+        <ion-input type="text" [(ngModel)]="languages" name="languages"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>email</ion-label>
+        <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label floating>Something about me</ion-label>
+        <ion-textarea type="text" [(ngModel)]="presText" name="presentation"></ion-textarea>
+      </ion-item>
+      
+      <button ion-button color="primary" type="submit" >Save</button>
+  </form>    
+  <p><button ion-button color="secondary" (click)="toSkills()" full >Next >></button></p>
+
+  <ion-card color="darkb" id="personalInfo">
+      <ion-card-header>
+          <h2><strong>Your previous info:</strong></h2>
+    </ion-card-header>
+    <ion-card-content>
+    <ion-grid>
+      <ion-row><ion-col><strong>Fullname:</strong></ion-col> <ion-col>{{ myPerson.fullName }}</ion-col> </ion-row> 
+      <ion-row><ion-col><strong>Age:</strong></ion-col> <ion-col>{{ myPerson.age }}</ion-col> </ion-row> 
+      <ion-row><ion-col><strong>City i live:</strong></ion-col> <ion-col>{{ myPerson.city }}</ion-col> </ion-row>  
+      <ion-row><ion-col><strong>Languages:</strong></ion-col> <ion-col>{{ myPerson.languages }}</ion-col> </ion-row> 
+      <ion-row><ion-col><strong>Email:</strong></ion-col> <ion-col>{{ myPerson.email }}</ion-col> </ion-row> 
+      <ion-row><ion-col><strong>About me:</strong></ion-col></ion-row> 
+      <ion-card-content>{{ myPerson.presText }}</ion-card-content>
+    </ion-grid>
+    </ion-card-content>
+    
+    </ion-card> 
+</ion-content>

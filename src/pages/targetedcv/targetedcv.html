@@ -1,0 +1,97 @@
+<ion-header>
+  
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
+      <ion-title>Targeted CV</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content>
+<ion-card color="darkb" id="usertexts" class="pdpage">
+  <ion-card-header>
+      <h2><strong>I am:</strong></h2>
+</ion-card-header>
+<ion-card-content>
+<ion-grid>
+  <ion-row><ion-col><strong>Fullname:</strong></ion-col> <ion-col>{{ myPerson.fullName }}</ion-col> </ion-row> 
+  <ion-row><ion-col><strong>Age:</strong></ion-col> <ion-col>{{ myPerson.age }}</ion-col> </ion-row> 
+  <ion-row><ion-col><strong>City i live:</strong></ion-col> <ion-col>{{ myPerson.city }}</ion-col> </ion-row>  
+  <ion-row><ion-col><strong>Languages:</strong></ion-col> <ion-col>{{ myPerson.languages }}</ion-col> </ion-row> 
+  <ion-row><ion-col><strong>Email:</strong></ion-col> <ion-col>{{ myPerson.email }}</ion-col> </ion-row> 
+  <ion-row><ion-col><strong>About me:</strong></ion-col></ion-row> 
+  <ion-card-content>{{ myPerson.presText }}</ion-card-content>
+</ion-grid>
+<ion-icon name="create" color="danger" (click)="createCV()"></ion-icon>
+
+</ion-card-content>
+
+</ion-card> 
+  
+  <ion-card color="darkb" id="skill" class="pdpage">
+      <ion-card-header>
+          <h2><strong>My skills:</strong></h2>
+      </ion-card-header>
+    <ion-card-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let skill of SkillRows | async">
+        <ion-item color="primary">
+          {{ skill.$value }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-icon name="create" color="danger" (click)="modSkill()"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="darkb" id="education" class="pdpage">
+      <ion-card-header>
+          <h2><strong>My Education:</strong></h2>
+      </ion-card-header>
+    <ion-card-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let ed of EdRows | async">
+        <ion-item color="primary">
+          {{ ed.$value }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-icon name="create" color="danger" (click)="modEdu()"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="darkb" id="works" class="pdpage">
+      <ion-card-header>
+          <h2><strong>Working projects:</strong></h2>
+      </ion-card-header>
+    <ion-card-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let project of ProjectRows | async">
+        <ion-item color="primary">
+          {{ project.$value }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-icon name="create" color="danger" (click)="modProject()"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="darkb" id="hobby" class="pdpage">
+      <ion-card-header>
+          <h2><strong>Other activities:</strong></h2>
+      </ion-card-header>
+    <ion-card-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let activity of ActivityRows | async">
+        <ion-item color="primary">
+          {{ activity.$value }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-icon name="create" color="danger" (click)="modHobby()"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
