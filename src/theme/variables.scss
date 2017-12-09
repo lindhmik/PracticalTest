@@ -1,19 +1,4 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
-$font-path: "../assets/fonts";
-
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
-$app-direction: ltr;
-
-
 @import "ionic.globals";
-
 
 // Shared Variables
 // --------------------------------------------------
@@ -22,8 +7,7 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
- $background-color: rgb(228, 29, 29);
-
+ $background-color: rgb(13, 2, 110);
 
 // Named Color Variables
 // --------------------------------------------------
@@ -38,18 +22,17 @@ $colors: (
   secondary:  #0aec46,
   danger:     #f53d3d,
   light:      #D6D6D6,
-  dark:       #222,
+  dark:       rgb(0, 0, 0),
   darkb: #0004ff
 );
- $toolbar-background: color($colors, secondary);
- $tabs-background: color($colors, secondary);
- $tabs-tab-color-inactive: color($colors, dark);
+ $toolbar-background: color($colors, primary);
+ $tabs-background: color($colors, light);
+ $tabs-tab-color-inactive: color($colors, light);
  
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
 
 
 
@@ -59,11 +42,9 @@ $colors: (
 
 
 
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
 
 
 
@@ -76,14 +57,12 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
-
 
 // Fonts
 // --------------------------------------------------

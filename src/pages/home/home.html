@@ -1,28 +1,65 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Welcome to myCVApp
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-slides pager>
 
-<ion-content padding>
+  <!-- This is first slider -->
 
-    <ion-card color="primary" block>
-      
+  <ion-slide class="bg-image1">
 
-        <ion-card-content>
-          <ion-card-title>
-            Curriculum vitae
-          </ion-card-title>
-            
-            <p>Easy way to manage your CV.</p>
-            <img src="images/CV1.jpg"/>
-            
-            
-        </ion-card-content>
-        </ion-card>
+      <div class="box">
 
-        <button ion-button full color="secondary" (click)="gotoLogin()">Login</button>
-        <button ion-button full color="primary" (click)="gotoRegister()">Register</button>
-      </ion-content>
+        <h1>Tired to keep papers and files with you?</h1>
+
+        <ion-icon name="checkbox" style="zoom:2.0;"></ion-icon>
+
+  <h1>CV on your pocket wherever you go</h1>
+
+  <p>..create it with just a couple of minutes</p>
+
+  </div>
+
+  </ion-slide>
+
+
+
+  <!-- This is second slider -->
+
+  <ion-slide class="bg-image2">
+
+      <div class="box">
+
+          <h1>Always where your phone is..</h1>
+
+  <ion-icon name="folder" style="zoom:2.0;"></ion-icon>
+
+  <h1>Easy to keep updated</h1>
+
+
+      </div>
+
+  </ion-slide>
+
+
+
+  <!-- This is last slider -->
+
+  <ion-slide class="bg-image">
+
+      <div class="box" >
+
+          <h1>Welcome to create..</h1>
+
+          <img src="assets/imgs/CV1.jpg" class="logo" style="zoom:0.3;">
+
+  <h1>..of your own</h1>
+
+  <!-- button to continue -->
+
+  <ion-row><button ion-button class="btns" color="secondary" (click)="gotoLogin()">Login</button>
+  <button ion-button class="btns" color="primary" (click)="gotoRegister()">Register</button></ion-row>
+
+      </div>
+
+  </ion-slide>
+
+
+
+</ion-slides>

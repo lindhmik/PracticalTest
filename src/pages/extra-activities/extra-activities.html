@@ -7,11 +7,11 @@
     </ion-header>
     
     <ion-content padding>
-        <h3> Thinks i like to do:</h3>
+
         <ion-row>
             <ion-col col-9>
               <ion-item>
-                <ion-input type="text" [(ngModel)]="newActivity" placeholder="New Skill"></ion-input>
+                <ion-input type="text" ion-text color="light" [(ngModel)]="newActivity" placeholder="New Skill"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col>
@@ -29,6 +29,6 @@
                 </ion-item-options>
               </ion-item-sliding>
             </ion-list>
-            <button ion-button color="secondary" type="submit" (click)="goCv()" >I'am done!</button>
+            <button ion-button color="secondary" type="submit" (click)="goTP()" >Team Projects >></button>
     </ion-content>
     

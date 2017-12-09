@@ -18,6 +18,7 @@ import { AboutPage } from '../pages/about/about';
 import { PersonaldetailsPage } from '../pages/personaldetails/personaldetails';
 import {SkillsPage} from '../pages/skills/skills';
 import {EducationPage} from '../pages/education/education';
+import {TeamprojectsPage} from '../pages/teamprojects/teamprojects';
 
 //firebase related: This is mess.. I have lots of problems after some update. Im not sure if everything below is needed but
 //im not brave enough to remove anything as i finally got this working..
@@ -53,7 +54,8 @@ const firebaseAuth = {
     AboutPage,
     PersonaldetailsPage,
     SkillsPage,
-    EducationPage
+    EducationPage,
+    TeamprojectsPage
   ],
   imports: [
     BrowserModule,
@@ -80,7 +82,8 @@ const firebaseAuth = {
     AboutPage,
     PersonaldetailsPage,
     SkillsPage,
-    EducationPage
+    EducationPage,
+    TeamprojectsPage
   ],
   providers: [
     StatusBar,

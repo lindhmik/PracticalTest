@@ -12,7 +12,6 @@
 <ion-content>
 <ion-card color="darkb" id="usertexts" class="pdpage">
   <ion-card-header>
-      <h2><strong>I am:</strong></h2>
 </ion-card-header>
 <ion-card-content>
 <ion-grid>
@@ -64,7 +63,7 @@
 
   <ion-card color="darkb" id="works" class="pdpage">
       <ion-card-header>
-          <h2><strong>Working projects:</strong></h2>
+          <h2><strong>Personal projects:</strong></h2>
       </ion-card-header>
     <ion-card-content>
     <ion-list>
@@ -77,6 +76,21 @@
     <ion-icon name="create" color="danger" (click)="modProject()"></ion-icon>
     </ion-card-content>
   </ion-card>
+  <ion-card color="darkb" id="works" class="pdpage">
+    <ion-card-header>
+        <h2><strong>Team projects:</strong></h2>
+    </ion-card-header>
+  <ion-card-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let TP of TPRows | async">
+      <ion-item color="primary">
+        {{ TP.$value }}
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-icon name="create" color="danger" (click)="modTP()"></ion-icon>
+  </ion-card-content>
+</ion-card>
 
   <ion-card color="darkb" id="hobby" class="pdpage">
       <ion-card-header>

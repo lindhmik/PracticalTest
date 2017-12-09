@@ -9,6 +9,7 @@ import {SkillsPage} from '../skills/skills';
 import { ProjectworkPage } from '../projectwork/projectwork';
 import { ExtraActivitiesPage } from '../extra-activities/extra-activities';
 import {EducationPage} from '../education/education';
+import { TeamprojectsPage } from '../teamprojects/teamprojects';
 
 
 @IonicPage()
@@ -22,6 +23,7 @@ export class TargetedcvPage {
   ActivityRows: FirebaseListObservable<any[]>;
   ProjectRows: FirebaseListObservable<any[]>;
   EdRows: FirebaseListObservable<any[]>;
+  TPRows:FirebaseListObservable<any[]>;
   myPerson=""; //variable for object my.person
   
 //Get data from database using methods in provider
@@ -30,6 +32,7 @@ export class TargetedcvPage {
     this.ActivityRows = this.fbProvider.getActivityRows();
     this.ProjectRows = this.fbProvider.getProjectRows();
     this.EdRows = this.fbProvider.getEdRows();
+    this.TPRows= this.fbProvider.getTPRows();
     
   }
   //show/hide elements which containing users cv information .. i decided im not using it..
@@ -60,6 +63,9 @@ export class TargetedcvPage {
   }
   modHobby(){
     this.navCtrl.push(ExtraActivitiesPage);
+  }
+  modTP(){
+    this.navCtrl.push(TeamprojectsPage);
   }
 
   ionViewDidLoad() {

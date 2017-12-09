@@ -1,0 +1,33 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Team Projects</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+
+      <ion-row>
+          <ion-col col-9>
+            <ion-item>
+              <ion-input type="text" ion-text color="light" [(ngModel)]="newTP" placeholder="New Team Project"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <button ion-button (click)="addTP()">Add new Skill!</button>
+          </ion-col>
+        </ion-row>
+        
+        <ion-list>
+            <ion-item-sliding *ngFor="let TP of TPRows | async">
+              <ion-item color="darkb" >
+                {{ TP.$value }}
+              </ion-item>
+              <ion-item-options side="right">
+                <button ion-button color="danger" icon-only (click)="removeTP(TP.$key)"><ion-icon name="trash"></ion-icon></button>
+              </ion-item-options>
+            </ion-item-sliding>
+          </ion-list>
+          <button ion-button color="secondary" type="submit" (click)="goCv()" >Your CV</button>
+  </ion-content>

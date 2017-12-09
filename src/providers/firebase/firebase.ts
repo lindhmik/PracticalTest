@@ -14,7 +14,7 @@ export class FirebaseProvider {
     return this.efd.list('/EdRows/');
   }
  
-  addEd(name) {
+  addEd(name)  {
     this.efd.list('/EdRows/').push(name);
   }
  
@@ -52,6 +52,16 @@ export class FirebaseProvider {
   }
   removeActivity(id) {
     this.pfd.list('/ActivityRows/').remove(id);
+  }
+  addTP(name){
+    this.pfd.list('/TPRows/').push(name)
+  }
+  getTPRows() {
+    return this.pfd.list(`/TPRows/`);
+
+  }
+  removeTP(id) {
+    this.pfd.list('/TPRows/').remove(id);
   }
 }
 

@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular'; //imported ViewChild and Nav which are used later on as a reference to app's root nav
-
+import { IonicPage, NavController, NavParams, Nav, AlertController } from 'ionic-angular'; //imported ViewChild and Nav which are used later on as a reference to app's root nav
+import {HomePage} from '../home/home';
 //imported pages:
 import { TabsPage } from './../tabs/tabs';
+import firebase from 'firebase';
 
 
 //defines what data (and which datatypes) "my pages array" has:
@@ -27,15 +28,29 @@ export class MenuPage {
   pages: PageInterface[] = [
     { title: 'About', pageName: 'TabsPage', tabComponent: 'AboutPage', index: 0, icon: 'home' },
     { title: 'Targeted CV Page', pageName: 'TabsPage', tabComponent: 'TargetedcvPage', index: 1, icon: 'md-information-circle' },
-    { title: 'Contact Information', pageName: 'TabsPage', tabComponent: 'ContactInformationPage', index: 2, icon: 'contacts' },
+    { title: 'Contact Information', pageName: 'TabsPage', tabComponent: 'ContactInformationPage', index: 2, icon: 'contact' },
+
     
  
   ];
 
  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl:AlertController) {
+  }
+  alert(message:string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
   }
 
+  logOut(): Promise<void> {
+    this.alert("You are logged out!");
+    this.navCtrl.push(HomePage);
+    return firebase.auth().signOut();
+    
+  }
   openPage(page: PageInterface) {
     let params = {};
     
@@ -55,5 +70,6 @@ export class MenuPage {
    ionViewDidLoad() {
      console.log('ionViewDidLoad MenuPage');
    }
+  
  
  }
